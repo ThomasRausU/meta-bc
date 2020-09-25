@@ -1,12 +1,12 @@
 DESCRIPTION = "Audio/video SIP-based IP phone (console edition)"
-LICENSE = "GPLv2"
+LICENSE = "GPLv3"
 HOMEPAGE = "http://www.linphone.org/technical-corner/linphone/overview"
 SECTION = "network"
 SECTION_linphonec =  "console/network"
 
 INC_PR = "r0"
 
-DEPENDS = "libbellesip libortp libmediastreamer2 libxml2 libmswebrtc opus-bc libbctoolbox belr belcard"
+DEPENDS = "libbellesip libortp libmediastreamer2 libxml2 libmswebrtc opus-bc libbctoolbox belr belcard xerces-c libxsd soci"
 RDEPENDS_${PN} = "opus-bc "
 
 PROVIDES = "liblinphone linphonec"
@@ -15,7 +15,7 @@ S = "${WORKDIR}/git"
 
 inherit cmake gettext pythonnative
 
-PACKAGECONFIG ??= "sqlite zlib video ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'x11', '', d)}"
+PACKAGECONFIG ??= "lime sqlite zlib video ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'x11', '', d)}"
 PACKAGECONFIG[sqlite] = "-DENABLE_SQLITE_STORAGE=yes, -DENABLE_SQLITE_STORAGE=no, sqlite3"
 PACKAGECONFIG[zlib] = ", --disable-zlib, zlib"
 PACKAGECONFIG[video]= ",-DENABLE_VIDEO=NO"
@@ -26,8 +26,8 @@ EXTRA_OECMAKE += "-DCMAKE_INSTALL_DATAROOTDIR=share -DCMAKE_INSTALL_LIBDIR=lib"
 
 # Fix cross-compilation include directories cmake problem
 # Check Yocto version with DISTRO_VERSION variable to add or not the two following lines
-EXTRA_OECMAKE += "${@base_version_less_or_equal('DISTRO_VERSION', '2.0', '', ' -DCMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES=${STAGING_DIR}/${MACHINE}/usr/include', d)}"
-EXTRA_OECMAKE += "${@base_version_less_or_equal('DISTRO_VERSION', '2.0', '', ' -DCMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES=${STAGING_DIR}/${MACHINE}/usr/include', d)}"
+EXTRA_OECMAKE += "${@oe.utils.version_less_or_equal('DISTRO_VERSION', '2.0', '', ' -DCMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES=${STAGING_DIR}/${MACHINE}/usr/include', d)}"
+EXTRA_OECMAKE += "${@oe.utils.version_less_or_equal('DISTRO_VERSION', '2.0', '', ' -DCMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES=${STAGING_DIR}/${MACHINE}/usr/include', d)}"
 
 INSANE_SKIP_${PN} += "dev-deps"
 

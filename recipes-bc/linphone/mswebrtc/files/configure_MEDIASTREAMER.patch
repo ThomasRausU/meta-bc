@@ -1,0 +1,15 @@
+Index: git/configure
+===================================================================
+--- git.orig/configure
++++ git/configure
+@@ -2933,10 +2933,6 @@ else
+   ISAC_FLAVOUR_MAIN_FALSE=
+ fi
+ 
+-
+-# check for libraries that have pkg-config files installed
+-PKG_CHECK_MODULES(MEDIASTREAMER, mediastreamer >= 2.0.0)
+-
+ # Checks for libraries.
+ # AC_CHECK_LIB([m],[cosf])
+ 

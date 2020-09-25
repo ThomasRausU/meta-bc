@@ -1,8 +1,17 @@
 PR = "r0"
 
-SRC_URI = "http://www.soft-switch.org/downloads/spandsp/${PN}-0.0.6pre18.tgz"
+SRC_URI = "git://github.com/freeswitch/spandsp.git;protocol=https"
+
+python () {
+    if d.getVar('LATEST_REVISIONS', True) == "1":
+        d.setVar('SRCREV', '${AUTOREV}')
+    else:
+        d.setVar('SRCREV', '???')
+}
+
+
 DEPENDS = "tiff"
-S = "${WORKDIR}/spandsp-0.0.6"
+S = "${WORKDIR}/git"
 
 # *cough*
 do_configure_append() {
@@ -13,7 +22,7 @@ DESCRIPTION = "A library of many DSP functions for telephony."
 HOMEPAGE = "http://www.soft-switch.org"
 SECTION = "libs"
 LICENSE = "LGPL"
-DEPENDS_${PN} = "tiff libxml2"
+RDEPENDS_${PN} = "tiff libxml2"
 
 inherit autotools pkgconfig
 

@@ -1,12 +1,12 @@
 DESCRIPTION = "Belcard is a C++ library to manipulate VCard standard format"
-LICENSE = "GPLv2"
+LICENSE = "GPLv3"
 HOMEPAGE = "http://www.linphone.org/"
 SECTION = "libs/network"
 
 INC_PR = "r0"
 DEPENDS = "libbelr"
 EXTRA_OECMAKE += " -DCMAKE_SKIP_INSTALL_RPATH=ON "
-EXTRA_OECMAKE += "-DCMAKE_INSTALL_DATAROOTDIR=share -DCMAKE_INSTALL_LIBDIR=lib"
+EXTRA_OECMAKE += "-DCMAKE_INSTALL_DATAROOTDIR=share -DCMAKE_INSTALL_LIBDIR=lib -DENABLE_STATIC=NO"
 PROVIDES = "libbelcard"
 S = "${WORKDIR}/git"
 
@@ -22,5 +22,9 @@ FILES_${PN}-dev = " \
     ${prefix}/share/belcard_tester/vcards/foldtest.vcf \
     ${prefix}/share/belcard_tester/vcards/unfoldtest.vcf \
     ${prefix}/share/belcard_tester/vcards/vcard.vcf \
-    ${prefix}/share/belcard_tester/vcards/vcards.vcf"
+    ${prefix}/share/belcard_tester/vcards/vcards.vcf \
+	/usr/share/belr \
+  	/usr/share/belr/grammars \
+  	/usr/share/belr/grammars/vcard_grammar \
+	"
 

@@ -1,5 +1,5 @@
 DESCRIPTION = "Powerful and lightweight streaming engine specialized for voice and video telephony applications"
-LICENSE = "GPLv2"
+LICENSE = "GPLv3"
 HOMEPAGE = "http://www.linphone.org/technical-corner/mediastreamer2/overview"
 SECTION = "libs/network"
 
@@ -8,6 +8,8 @@ INC_PR = "r0"
 DEPENDS = "libortp speex alsa-lib spandsp libv4l virtual/gettext"
 PROVIDES += "libmediastreamer2"
 S = "${WORKDIR}/git"
+
+
 
 PACKAGECONFIG ??= "ffmpeg vpx opus srtp bzrtp gsm ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'x11', '', d)}"
 PACKAGECONFIG[ffmpeg] = ",  -DENABLE_FFMPEG=NO, libav"

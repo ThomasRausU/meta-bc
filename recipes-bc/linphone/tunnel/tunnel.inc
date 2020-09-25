@@ -6,7 +6,7 @@ SECTION = "libs/network"
 INC_PR = "r0"
 
 DEPENDS = "bctoolbox openssl"
-DEPENDS_${PN} = "bctoolbox openssl"
+RDEPENDS_${PN} = "bctoolbox openssl"
 PROVIDES = "tunnel"
 
 S = "${WORKDIR}/git"

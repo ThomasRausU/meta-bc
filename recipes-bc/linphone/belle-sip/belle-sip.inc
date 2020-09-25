@@ -1,5 +1,5 @@
 DESCRIPTION = "SIP stack from Belledonne Communications"
-LICENSE = "GPLv2"
+LICENSE = "GPLv3"
 HOMEPAGE = "http://www.linphone.org/technical-corner/belle-sip/overview"
 SECTION = "libs/network"
 
@@ -28,7 +28,17 @@ FILES_${PN}-dev = " \
     ${libdir}/lib*.so \
     ${libdir}/pkgconfig \
     ${libdir}/*.a \
-    ${prefix}/share/BelleSIP"
+    ${prefix}/share/BelleSIP \
+	/usr/share \
+	/usr/share/belle_sip_tester \
+	/usr/share/belle_sip_tester/tester_hosts \
+	/usr/lib/cmake \
+	/usr/lib/cmake/BelleSIP \
+	/usr/lib/cmake/BelleSIP/BelleSIPConfig.cmake \
+	/usr/lib/cmake/BelleSIP/BelleSIPTargets.cmake \
+	/usr/lib/cmake/BelleSIP/BelleSIPTargets-noconfig.cmake \
+	/usr/lib/cmake/BelleSIP/BelleSIPConfigVersion.cmake \
+"
 
 
 

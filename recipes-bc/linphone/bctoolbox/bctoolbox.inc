@@ -5,7 +5,8 @@ SECTION = "libs/network"
 INC_PR = "r0"
 
 
-DEPENDS = "libpolarssl-bc bcunit"
+#DEPENDS = "libpolarssl-bc bcunit"
+DEPENDS = "polarssl bcunit"
 PROVIDES = "libbctoolbox"
 S = "${WORKDIR}/git"
 

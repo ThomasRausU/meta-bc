@@ -1,7 +1,5 @@
 require linphone.inc
 
-inherit gitpkgv
-
 PR = "${INC_PR}.0"
 
 python () {
@@ -19,8 +17,8 @@ python () {
 }
 
 #SRCREV = "7e2a6a56fa6a70a6ec3875cea26f1f1e17910917"
-SRC_URI = "https://gitlab.linphone.org/BC/public/linphone.git"
+SRC_URI = "git://gitlab.linphone.org/BC/public/linphone.git;protocol=https"
 PV = "git_${SRCREV}"
 PKGV = "${GITPKGVTAG}"
 
-LIC_FILES_CHKSUM = "file://COPYING;md5=d421c6fe1a13d8b1dc830e02bcd20fcd"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ff3103b5db8ba4e2c66c511b7a73e407"

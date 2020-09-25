@@ -1,5 +1,5 @@
 DESCRIPTION = "Real-time transport protocol (RFC 3550) library"
-LICENSE = "GPLv2"
+LICENSE = "GPLv3"
 HOMEPAGE = "http://www.linphone.org/technical-corner/ortp/overview"
 SECTION = "libs/network"
 
@@ -19,5 +19,8 @@ FILES_${PN}-dev = " \
     ${libdir}/*.a \
     ${libdir}/*.o \
     ${libdir}/pkgconfig \
-    ${prefix}/share/oRTP/" 
+    ${prefix}/share/oRTP/ \
+	/usr/lib/cmake \
+"
+
 

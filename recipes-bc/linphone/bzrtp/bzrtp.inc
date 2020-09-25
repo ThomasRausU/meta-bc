@@ -1,5 +1,5 @@
 DESCRIPTION = "Opensource implementation of ZRTP keys exchange protocol"
-LICENSE = "GPLv2"
+LICENSE = "GPLv3"
 HOMEPAGE = "https://github.com/BelledonneCommunications/bzrtp"
 SECTION = "libs/network"
 

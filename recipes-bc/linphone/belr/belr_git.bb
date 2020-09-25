@@ -1,7 +1,5 @@
 require belr.inc
 
-inherit gitpkgv
-
 PR = "${INC_PR}.0"
 
 python () {
@@ -19,8 +17,7 @@ python () {
 }
 
 #SRCREV = "4f32b9c29c4ab8c4ccfc1e0899019a811d495054"
-SRC_URI = "https://gitlab.linphone.org/BC/public/belr.git"
+SRC_URI = "git://gitlab.linphone.org/BC/public/belr.git;protocol=https"
 PV = "git_${SRCREV}"
-PKGV = "${GITPKGVTAG}"
 
-LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ff3103b5db8ba4e2c66c511b7a73e407"

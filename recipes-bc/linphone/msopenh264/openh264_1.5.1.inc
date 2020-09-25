@@ -7,10 +7,6 @@ PROVIDES = "libopenh264"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=bb6d3771da6a07d33fd50d4d9aa73bcf"
 
-SRC_URI[md5sum] = "3a082059356cdde0a6a7274c3eb1f2ce"
-
-
-
 
 PACKAGES = "${PN}-dbg ${PN}-staticdev ${PN}-dev ${PN}-doc ${PN}-locale  ${PN}"
 

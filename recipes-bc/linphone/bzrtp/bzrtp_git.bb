@@ -1,7 +1,5 @@
 require bzrtp.inc
 
-inherit gitpkgv
-
 PR = "${INC_PR}.0"
 
 python () {
@@ -19,8 +17,7 @@ python () {
 }
 
 #SRCREV = "37adaa0536432149a51332d8eb04973a3ba6bac9"
-SRC_URI = "https://gitlab.linphone.org/BC/public/bzrtp.git"
+SRC_URI = "git://gitlab.linphone.org/BC/public/bzrtp.git;protocol=https"
 PV = "git_${SRCREV}"
-PKGV = "${GITPKGVTAG}"
 
-LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ff3103b5db8ba4e2c66c511b7a73e407"

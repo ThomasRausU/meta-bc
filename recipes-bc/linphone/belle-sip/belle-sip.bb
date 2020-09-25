@@ -1,7 +1,5 @@
 require belle-sip.inc
 
-inherit gitpkgv
-
 PR = "${INC_PR}.0"
 
 python () {
@@ -19,10 +17,9 @@ python () {
 }
 
 #SRCREV = "c840e2192b2d0151cc895b844e44bfe0d2103fcf"
-SRC_URI = "https://gitlab.linphone.org/BC/public/belle-sip.git;commit=${SRCREV}"
+SRC_URI = "git://gitlab.linphone.org/BC/public/belle-sip.git;protocol=https"
 PV = "git_${SRCREV}"
-PKGV = "${GITPKGVTAG}"
 
-LIC_FILES_CHKSUM = "file://COPYING;md5=9f9938e31db89d55a796e86808c96848;rev={SRCREV}"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ff3103b5db8ba4e2c66c511b7a73e407;rev={SRCREV}"
 
 

@@ -1,4 +1,5 @@
 require linphone.inc
+inherit gitpkgv
 
 PR = "${INC_PR}.0"
 

@@ -3,11 +3,11 @@ DESCRIPTION = "Mediastreamer2 plugin adding support for WebRTC features (iSAC co
 SECTION = "libs"
 PRIORITY = "optional"
 LICENSE = "GPLv2"
-DEPENDS = "libmediastreamer2 "
+DEPENDS = "libmediastreamer2"
 PROVIDES = "libmswebrtc"
 
 #INHIBIT_PACKAGE_STRIP = "1"  
-EXTRA_OECMAKE += " -DCMAKE_SKIP_INSTALL_RPATH=ON -DENABLE_ISAC=NO -DENABLE_AECM=YES -DENABLE_AEC=NO "
+EXTRA_OECMAKE += " -DCMAKE_SKIP_INSTALL_RPATH=ON -DENABLE_ISAC=NO -DENABLE_AECM=YES -DENABLE_AEC=YES "
 EXTRA_OECMAKE += "-DCMAKE_INSTALL_DATAROOTDIR=share -DCMAKE_INSTALL_LIBDIR=lib"
 
 FILES_${PN} = "${libdir}/mediastreamer/plugins/*.so"

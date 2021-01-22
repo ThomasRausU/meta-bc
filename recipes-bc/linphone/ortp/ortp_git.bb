@@ -1,6 +1,6 @@
 require ortp.inc
 
-# inherit gitpkgv
+inherit gitpkgv
 
 PR = "${INC_PR}.0"
 
@@ -21,6 +21,6 @@ python () {
 #SRCREV = "5f8fcddce392f1510768949a4691f9e8c170badb"
 SRC_URI = "git://gitlab.linphone.org/BC/public/ortp.git;protocol=https"
 PV = "git_${SRCREV}"
-# PKGV = "${GITPKGVTAG}"
+PKGV = "${GITPKGVTAG}"
 
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ff3103b5db8ba4e2c66c511b7a73e407"

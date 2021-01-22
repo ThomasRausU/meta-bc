@@ -6,7 +6,7 @@ SECTION = "libs/network"
 INC_PR = "r0"
 
 DEPENDS = "libortp speex alsa-lib spandsp libv4l virtual/gettext"
-PROVIDES += "libmediastreamer2"
+PROVIDES += "libmediastreamer2 libmediastreamer11"
 S = "${WORKDIR}/git"
 
 

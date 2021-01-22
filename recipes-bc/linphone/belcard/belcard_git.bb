@@ -1,5 +1,7 @@
 require belcard.inc
 
+inherit gitpkgv
+
 PR = "${INC_PR}.0"
 
 python () {
@@ -18,5 +20,6 @@ python () {
 
 SRC_URI = "git://gitlab.linphone.org/BC/public/belcard.git;protocol=https"
 PV = "git_${SRCREV}"
+PKGV = "${GITPKGVTAG}"
 
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ff3103b5db8ba4e2c66c511b7a73e407"

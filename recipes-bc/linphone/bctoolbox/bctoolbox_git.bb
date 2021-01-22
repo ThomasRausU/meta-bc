@@ -1,5 +1,7 @@
 require bctoolbox.inc
 
+inherit gitpkgv
+
 PR = "${INC_PR}.0"
 
 python () {
@@ -18,7 +20,8 @@ python () {
 
 #SRCREV = "01285f4b49e4c06534058aa80dc6e9567cca9b16"
 #SRCREV = "74918554d02e66e2fb1df0bbedcf7f19a7266584"
-SRC_URI = "git://gitlab.linphone.org/BC/public/bctoolbox.git;protocol=https"
+SRC_URI = "git://gitlab.linphone.org/BC/public/bctoolbox.git;protocol=https;commit=${SRCREV}"
 PV = "git_${SRCREV}"
+PKGV = "${GITPKGVTAG}"
 
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ff3103b5db8ba4e2c66c511b7a73e407"

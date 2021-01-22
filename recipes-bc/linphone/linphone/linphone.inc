@@ -65,7 +65,7 @@ EXTRA_OECMAKE += " -DENABLE_MPEG4=OFF"
 EXTRA_OECMAKE += " -DENABLE_NLS=OFF"
 EXTRA_OECMAKE += " -DENABLE_NON_FREE_CODECS=ON"
 EXTRA_OECMAKE += " -DENABLE_OPENH264=ON"
-EXTRA_OECMAKE += " -DENABLE_OPUS=OFF"
+EXTRA_OECMAKE += " -DENABLE_OPUS=ON"
 EXTRA_OECMAKE += " -DENABLE_PCAP=OFF"
 EXTRA_OECMAKE += " -DENABLE_POLARSSL=OFF"
 EXTRA_OECMAKE += " -DENABLE_QRCODE=OFF"
@@ -109,10 +109,9 @@ INSANE_SKIP_${PN} += "dev-deps"
 
 PACKAGES += " ${PN}c ${PN}-common ${PN}-tester ${PN}-utils ${PN}-rings"
 
-FILES_${PN} += "${bindir}/linphone-daemon \
-		${bindir}/linphone-daemon-pipetest "
-#		${libdir}/liblinphone.so.9.0.0 \
-#		${libdir}/liblinphone.so.9 "
+FILES_${PN} = "${bindir}/linphone-daemon \
+		${bindir}/linphone-daemon-pipetest \
+		${libdir}/liblinphone.so.10"
 
 FILES_${PN}-common = "${bindir}/lp-gen-wrappers \
 			${datadir}/pixmaps \
@@ -124,6 +123,9 @@ FILES_${PN}-common = "${bindir}/lp-gen-wrappers \
 			${datadir}/sounds/linphone/hello16000.wav \
 			${datadir}/sounds/linphone/incoming_chat.wav \
 			${datadir}/sounds/linphone/ringback.wav \
+			${datadir}/sounds/linphone/toy-mono.wav \
+			${datadir}/sounds/linphone/dont_wait_too_long.mkv \
+			${datadir}/sounds/linphone/silence.mkv \
 			${datadir}/images/nowebcamCIF.jpg \
 			${datadir}/appdata/linphone.appdata.xml \
 			${datadir}/icons"
@@ -217,6 +219,7 @@ FILES_${PN}-tester ="${bindir}/liblinphone_tester \
 			${datadir}/liblinphone_tester/rcfiles/pauline_zrtp_ecdh225_rc \
 			${datadir}/liblinphone_tester/rcfiles/pauline_zrtp_ecdh448_rc"
 
+
 FILES_${PN}c = "${bindir}/linphonec \
 		${bindir}/linphonecsh \
 		${datadir}/sounds/linphone/ringback.wav \
@@ -224,14 +227,15 @@ FILES_${PN}c = "${bindir}/linphonec \
 
 FILES_${PN}-rings = "${datadir}/sounds/linphone/rings"
 
-FILES_${PN}-dev += " \
+FILES_${PN}-dev = " \
     ${includedir} \
     ${libdir}/pkgconfig \
+    ${libdir}/liblinphone.so \
     ${prefix}/share/Linphone \
 	/usr/share/belr \
 	/usr/share/belr/grammars \
 	/usr/share/belr/grammars/identity_grammar \
-	/usr/share/belr/grammars/cpim_grammar \
+	/usr/share/belr/grammars/cpim_grammar \    
 "
 
 
